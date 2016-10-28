@@ -21,8 +21,27 @@ dependencies:
 require "prism"
 ```
 
+---
 
-Samples will be located in `samples/`
+To setup basic Phaser things:
+
+```bash
+$ make setup
+```
+
+To build server binary and TypeScript files:
+
+```bash
+$ make
+```
+
+To run server:
+
+```bash
+$ make serve
+```
+
+---
 
 ## Development
 
