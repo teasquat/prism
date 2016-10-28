@@ -11,7 +11,7 @@ module Prism
   # load stylesheet
   get "/style/:path" do |env|
     env.response.content_type = "text/css"
-    File.read load_style(env.param.query["path"])
+    File.read load_style(env.params.query["path"])
   end
 
   # load scripts
@@ -19,4 +19,6 @@ module Prism
     env.response.content_type = "application/javascript"
     File.read load_style(env.params.query["path"])
   end
+
+  Kemal.run
 end
