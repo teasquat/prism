@@ -1,6 +1,6 @@
 # prism
 
-TODO: Write a description here
+A Crystal library for serving TypeScript compiled Phaser web-based games. Using utilities of the Crystal standard library and *Kemal*, as a server for Phaser allows for super-fast serving and socketing stuff.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   prism:
-    github: [your-github-name]/prism
+    github: teasquat/prism
 ```
 
 
@@ -22,15 +22,31 @@ require "prism"
 ```
 
 
-TODO: Write usage instructions here
+Samples will be located in `samples/`
 
 ## Development
 
-TODO: Write development instructions here
+```
+- Add possibility of serving Phaser stuff
+
+- Add compilation and handling of TypeScript/JavaScript (Kemal)
+
+- Add socket-based connections to Phaser (for multiplayer)
+
+- Add database handling
+
+- Add TypeScript *framework* for online-multiplayer/highscore/saves
+
+- Implement templates for different example games
+
+- Add possibility of *Electron* desktop apps
+
+- Get hyped and make nice web-based games
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/prism/fork )
+1. Fork it ( https://github.com/teasquat/prism/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -38,4 +54,8 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Lord Niels N. Horn - creator, maintainer
+- [nilq](https://github.com/nilq) Lord Niels N. Horn - crystal cooking
+
+- [snillerboy](https://github.com/snillerboy999) William Kattrup - crystal cooking, Phaser magic
+
+- [FuzzyLitch](https://github.com/FuzzyLitch) Emile <insert french here> - socket magic, Phaser magic
