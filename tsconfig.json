@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "out": "static/js/game.js",
+        "outDir": "src",
+        "sourceMap": false
+    },
+    "files": [
+      "static/js/lib/p2.d.ts",
+      "static/js/lib/phaser.d.ts",
+      "static/js/lib/pixi.d.ts",
+		  "static/js/src/game.ts"
+    ]
+}
