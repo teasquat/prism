@@ -2,6 +2,12 @@
 
 A Crystal library for serving TypeScript compiled Phaser web-based games. Using utilities of the Crystal standard library and *Kemal*, as a server for Phaser allows for super-fast serving and socketing stuff.
 
+> 2016-10-28 22:58:15 +0200 200 GET /style/main.css 65.6µs
+> 2016-10-28 22:58:15 +0200 200 GET /script/phaser.min.js 542.2µs
+> 2016-10-28 22:58:15 +0200 200 GET /script/game.js 31.8µs
+> 2016-10-28 22:58:15 +0200 200 GET /assets/profile.png 81.6µs
+
+
 ## Installation
 
 
