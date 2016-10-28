@@ -1,6 +1,11 @@
 name: prism
 version: 0.1.0
 
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    branch: master
+
 authors:
   - Lord Niels N. Horn <i.am@nilq.dk>
 
