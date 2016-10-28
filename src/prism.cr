@@ -5,7 +5,6 @@ require "kemal"
 module Prism
   # load index
   get "/" do
-    puts "index.ecr : render"
     load_index
   end
 
