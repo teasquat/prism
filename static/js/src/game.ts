@@ -1,7 +1,7 @@
 class SimpleGame {
 
     constructor() {
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', {
+        this.game = new Phaser.Game(800, 800, Phaser.AUTO, 'content', {
           preload: this.preload, create: this.create
         });
     }
@@ -9,7 +9,7 @@ class SimpleGame {
     game: Phaser.Game;
 
     preload() {
-        this.game.load.image('logo', 'phaser2.png');
+        this.game.load.image('logo', '../../assets/profile.png');
     }
 
     create() {

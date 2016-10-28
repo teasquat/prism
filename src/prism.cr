@@ -21,5 +21,10 @@ module Prism
     File.read load_script(env.params.url["path"])
   end
 
+  # load assets
+  get "/assets/:path" do |env|
+    File.read load_asset(env.params.url["path"])
+  end
+
   Kemal.run
 end
