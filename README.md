@@ -55,10 +55,6 @@ $ make serve
 ## Development
 
 ```
-- Add possibility of serving Phaser stuff
-
-- Add compilation and handling of TypeScript/JavaScript (Kemal)
-
 - Add socket-based connections to Phaser (for multiplayer)
 
 - Add database handling
