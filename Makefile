@@ -15,3 +15,5 @@ socket:
 setup:
 	sudo npm install typings
 	sudo typings install github:photonstorm/phaser/typescript/typings.json -GD
+
+	shards install
