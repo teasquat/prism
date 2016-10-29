@@ -13,5 +13,5 @@ socket:
 	crystal build --release tools/server.cr
 
 setup:
-	sudo npm install typings
+	sudo npm install typings -g
 	sudo typings install github:photonstorm/phaser/typescript/typings.json -GD
