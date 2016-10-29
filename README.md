@@ -47,7 +47,7 @@ $ make
 To run server:
 
 ```bash
-$ make serve
+$ make run
 ```
 
 If running into weird stuff:
