@@ -19,9 +19,5 @@ module Server
     end
   end
 
-  def emit(room, m)
-
-  end
-
   Kemal.run
 end
