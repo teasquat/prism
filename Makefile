@@ -2,7 +2,6 @@ build:
 	crystal build --release src/prism.cr
 	tsc
 
-
 run:
 	./prism
 
