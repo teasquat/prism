@@ -50,6 +50,12 @@ To run server:
 $ make serve
 ```
 
+If running into weird stuff:
+
+```bash
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+```
+
 ---
 
 ## Development
