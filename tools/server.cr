@@ -33,6 +33,8 @@ while !server.closed?
   if bytes[0] == 200
     # handle new clients
     clients[bytes[1]] = client
+
+    puts "200"
   end
 
   # pass offset data
@@ -40,16 +42,19 @@ while !server.closed?
     # pass bytes to all connected clients
     if clients[bytes[1]] == client
       clients.each_value do |c|
+        puts "201"
         server.send(bytes, c)
       end
     end
   end
 
   # leave
-  if bytes[0] == 201
+  if bytes[0] == 202
     # handle leaving clients
     if clients[bytes[1]] == client
       clients.reject!(bytes[1])
+
+      puts "202"
     end
   end
 end
