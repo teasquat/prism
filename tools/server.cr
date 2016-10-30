@@ -1,22 +1,56 @@
 require "socket"
+require "option_parser"
+
+# all data sent through the server
+# - must be offset by one as
+# - the first element in the bytes
+# - will be treated as command.
+
+# structure:
+# - [0] : command
+# - [1] : id
+# - [2 .. #bytes] : data
+
+host = "0.0.0.0"
+port = 1337
+
+clients = {} of UInt8 => Socket::IPAddress
+
+OptionParser.parse! do |opts|
+  opts.on("-p PORT", "--port PORT", "define port to run server") do |opt|
+    port = opt.to_i
+  end
+end
 
 server = UDPSocket.new
-server.bind "localhost", 3001
+server.bind host, port
 
-#array with positions and velocities of each id/player
-
-while true
+while !server.closed?
   bytes = Slice(UInt8).new(32)
-  message_size, client_addr = server.receive(bytes)
+  message, client = server.receive(bytes)
 
-  if  bytes[0]==200
-    #a bunch of code where it uses the rest of the bytes to modify the data of a specific id, that id should also be specified in the data, and should not use the ip
-  if  bytes[0]==201
-    #hand out new id
-  elsif  bytes[0]==202
-    #give info on all other id/players
-  elsif  bytes[0]==203
-    #delete id
+  # join
+  if bytes[0] == 200
+    # handle new clients
+    clients[bytes[1]] = client
+  end
+
+  # pass offset data
+  if bytes[0] == 201
+    # pass bytes to all connected clients
+    if clients[bytes[1]] == client
+      clients.each_value do |c|
+        server.send(bytes, c)
+      end
+    end
+  end
+
+  # leave
+  if bytes[0] == 201
+    # handle leaving clients
+    if clients[bytes[1]] == client
+      clients.reject!(bytes[1])
+    end
   end
 end
 
