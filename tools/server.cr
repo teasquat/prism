@@ -1,23 +1,23 @@
-require "kemal"
+require "socket"
 
-module Server
-  ROOMS = {} of String => Array(HTTP::WebSocket)
+server = UDPSocket.new
+server.bind "localhost", 3001
 
-  ws "/rooms" do |socket, env|
-    room_id = env.params.query["id"]
+#array with positions and velocities of each id/player
 
-    ROOMS[room_id] << socket
+while true
+  bytes = Slice(UInt8).new(32)
+  message_size, client_addr = server.receive(bytes)
 
-    socket.on_message do |m|
-      ROOMS[room_id].each { |sock|
-        sock.send m
-      }
-    end
-
-    socket.on_close do
-      ROOMS[room_id].delete socket
-    end
+  if  bytes[0]==200
+    #a bunch of code where it uses the rest of the bytes to modify the data of a specific id, that id should also be specified in the data, and should not use the ip
+  if  bytes[0]==201
+    #hand out new id
+  elsif  bytes[0]==202
+    #give info on all other id/players
+  elsif  bytes[0]==203
+    #delete id
   end
-
-  Kemal.run
 end
+
+server.close
