@@ -88,4 +88,4 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 - [snillerboy](https://github.com/snillerboy999) William Kattrup - crystal cooking, Phaser magic
 
-- [FuzzyLitch](https://github.com/FuzzyLitch) Emile <insert french here> - socket magic, Phaser magic
+- [FuzzyLitch](https://github.com/FuzzyLitch) Emile <insert french here> - UDP wizard
