@@ -65,7 +65,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 - Add database handling
 
-- Add TypeScript *framework* for online-multiplayer/highscore/saves
+- Add TypeScript *framework* for online-multiplayer/highscore/saves etc.
 
 - Implement templates for different example games
 
